@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                echo "Code fetch ho gaya branch se: ${env.BRANCH_NAME}"
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "Building application for ${env.BRANCH_NAME}..."
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Running unit tests on branch ${env.BRANCH_NAME}..."
+            }
+        }
+    }
+}
